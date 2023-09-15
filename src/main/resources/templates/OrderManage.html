@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+  <li th:each="order: ${orderList}" th:object="${order}">
+
+    <span th:text="*{orderId}"></span>
+    <span th:text="*{orderDate}"></span>
+
+
+
+
+
+
+  </li>
+</ul>
+<a th:href="@{/customer}">Back to Customers</a><br>
+
+</body>
+</html>

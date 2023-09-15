@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Select a Customer</h1>
+<form th:action="@{/orders/byCustomerId}" method="get">
+    <select name="customerId">
+        <option th:each="customer : ${customers}" th:value="${customer.customerID}" th:text="${customer.email}"></option>
+    </select>
+    <button type="submit">Show Orders</button>
+</form>
+</body>
+</html>

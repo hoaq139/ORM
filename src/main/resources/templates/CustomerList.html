@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<li th:each="customer: ${customerList}" th:object="${customer}">
+    <span th:text="*{customerID}"></span><span th:text="*{lastName}"></span>:<span th:text="*{firstName}"></span>:<span th:text="*{email}"></span>
+    <a th:href="@{/addorder(id=*{getCustomerID()})}">Create Order</a>
+
+
+
+
+</li>
+<a th:href="@{/addcustomer}">Add Customer</a><br>
+<a th:href="@{/customers}">Show Customer Order Detail</a><br>
+<a th:href="@{/categories}">Show Product by Category</a>
+
+</body>
+</html>

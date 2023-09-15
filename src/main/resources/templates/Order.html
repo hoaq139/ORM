@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>Title</title>
+</head>
+<body>
+<h1>Orders by Customer</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>OrderDate</th>
+        <th>TotalAmount</th>
+    </tr>
+    <tr th:each="order : ${orders}">
+        <td th:text="${order.getOrderId()}"></td>
+        <td th:text="${order.getOrderDate()}"></td>
+        <td th:text="${order.getTotalAmount()}"></td>
+
+    </tr>
+</table>
+<a th:href="@{/customers}">Back to Select Customers</a><br>
+<a th:href="@{/customer}">Back to Customers List</a>
+</body>
+</html>
